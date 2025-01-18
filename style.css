@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&family=Poppins&display=swap");
+
+:root {
+  /*  colors*/
+  --primary: #b1e5f2;
+  --secondary: #ffa384;
+  --accent: white;
+  --background: #f3f1f7;
+  --black: #333a44;
+  --white: #fff;
+
+  /*  text*/
+  --hero: "Poppins", sans-serif;
+  --title: "Playfair Display", serif;
+  --text: "Lora", serif;
+  /* general */
+  --default-margin: 8px;
+  --shadow: 1px 1px 3px rgba(56, 65, 74, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  font-family: var(--hero);
+  font-optical-sizing: auto;
+  font-style: normal;
+  /*  background: lightsalmon;*/
+  color: var(--black);
+}
+
+/* Margin utility classes */
+
+.m-1 {
+  margin: var(--default-margin);
+}
+
+.m-2 {
+  margin: calc(var(--default-margin) * 2);
+}
+
+.m-3 {
+  margin: calc(var(--default-margin) * 3);
+}
+
+.m-4 {
+  margin: calc(var(--default-margin) * 4);
+}
+
+.m-5 {
+  margin: calc(var(--default-margin) * 5);
+}
+
+.mt-1 {
+  margin-top: var(--default-margin);
+}
+.mb-1 {
+  margin-bottom: var(--default-margin);
+}
+.ml-1 {
+  margin-left: var(--default-margin);
+}
+.mr-1 {
+  margin-right: var(--default-margin);
+}
+
+.mt-2 {
+  margin-top: calc(var(--default-margin) * 2);
+}
+.mb-2 {
+  margin-bottom: calc(var(--default-margin) * 2);
+}
+.ml-2 {
+  margin-left: calc(var(--default-margin) * 2);
+}
+.mr-2 {
+  margin-right: calc(var(--default-margin) * 2);
+}
+
+.mt-3 {
+  margin-top: calc(var(--default-margin) * 3);
+}
+.mb-3 {
+  margin-bottom: calc(var(--default-margin) * 3);
+}
+.ml-3 {
+  margin-left: calc(var(--default-margin) * 3);
+}
+.mr-3 {
+  margin-right: calc(var(--default-margin) * 3);
+}
+
+.mt-4 {
+  margin-top: calc(var(--default-margin) * 4);
+}
+.mb-4 {
+  margin-bottom: calc(var(--default-margin) * 4);
+}
+.ml-4 {
+  margin-left: calc(var(--default-margin) * 4);
+}
+.mr-4 {
+  margin-right: calc(var(--default-margin) * 4);
+}
+
+.mt-5 {
+  margin-top: calc(var(--default-margin) * 5);
+}
+.mb-5 {
+  margin-bottom: calc(var(--default-margin) * 5);
+}
+.ml-5 {
+  margin-left: calc(var(--default-margin) * 5);
+}
+.mr-5 {
+  margin-right: calc(var(--default-margin) * 5);
+}
+
+button {
+  background: black;
+  color: white;
+  padding: 16px 32px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1.2em;
+  border: 1px solid transparent;
+  transition: all 0.25s;
+  font-weight: 500;
+  min-width: 200px;
+  text-transform: uppercase;
+}
+
+button:hover {
+  box-shadow: var(--shadow);
+  opacity: 0.8;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 0px;
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*  flex-wrap: wrap;*/
+  padding: 20px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 95%;
+  height: 95%;
+  background-image: url("https://myflowimages.s3.us-east-2.amazonaws.com/frontend/Homepage.jpg");
+  background-size: cover;
+  background-position: bottom;
+  text-align: center;
+  border-radius: 20px;
+  filter: brightness(80%);
+}
+
+.hero-text {
+  font-size: 2.5em;
+  color: black;
+  background: rgba(255, 255, 255, 0.6);
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.hero-content {
+  padding: 20px;
+  width: 95%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.logo-wrapper {
+  top: -80px;
+  position: absolute;
+  height: 220px;
+  width: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: white;
+  margin: 20px;
+  box-shadow: var(--shadow);
+}
+
+@keyframes glow {
+  0% {
+    box-shadow:
+      0 0 10px var(--accent),
+      0 0 20px var(--accent),
+      0 0 40px var(--accent);
+  }
+  100% {
+    box-shadow:
+      0 0 20px var(--accent),
+      0 0 40px var(--accent),
+      0 0 70px var(--accent);
+  }
+}
+
+.logo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.navbar {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px;
+}
+
+.navbar i {
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+}
