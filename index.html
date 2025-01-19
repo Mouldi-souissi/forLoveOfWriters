@@ -21,36 +21,52 @@
 
   <body>
     <nav class="container">
-      <i class="bi bi-search"></i>
-      <details>
-        <summary>
-          <a class="">
-            <i class="bi bi-list"></i>
-          </a>
-        </summary>
-        <div class="menu_list">
-          <a class="menu_item d-flex align-items-center gap-3" href="#">
-            <i class="bi bi-house"></i>
-            <div>Home</div>
-          </a>
-          <a class="menu_item d-flex align-items-center gap-3" href="#">
-            <i class="bi bi-info-circle"></i>
-            <div>About Us</div>
-          </a>
-          <a class="menu_item d-flex align-items-center gap-3" href="#">
-            <i class="bi bi-mailbox"></i>
-            <div>Contact Us</div>
-          </a>
-        </div>
-      </details>
+      <ul class="nav-links">
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">Features</a>
+        </li>
+        <li>
+          <a href="#">Contact Us</a>
+        </li>
+      </ul>
+      <div class="d-flex gap-3 align-items-center">
+        <i class="bi bi-person-fill nav-icon"></i>
+
+        <details>
+          <summary>
+            <a class="">
+              <i class="bi bi-list nav-icon"></i>
+            </a>
+          </summary>
+          <div class="menu_list">
+            <a class="menu_item d-flex align-items-center gap-3" href="#">
+              <i class="bi bi-house"></i>
+              <div>Home</div>
+            </a>
+            <a class="menu_item d-flex align-items-center gap-3" href="#">
+              <i class="bi bi-boxes"></i>
+              <div>Features</div>
+            </a>
+            <a class="menu_item d-flex align-items-center gap-3" href="#">
+              <i class="bi bi-mailbox"></i>
+              <div>Contact Us</div>
+            </a>
+          </div>
+        </details>
+      </div>
     </nav>
-    <section class="hero container">
-      <div class="hero-content">
-        <div class="logo-wrapper">
-          <img class="logo" alt="logo" src="assets/img/logo.png" />
+    <section class="container">
+      <div class="hero">
+        <div class="hero-content">
+          <div class="logo-wrapper">
+            <img class="logo" alt="logo" src="assets/img/logo.png" />
+          </div>
+          <p class="hero-text mt-3">Express your creativity freely</p>
+          <button class="mt-3 lg">START NOW</button>
         </div>
-        <p class="hero-text mt-3">Express your creativity freely</p>
-        <button class="mt-3">START NOW</button>
       </div>
     </section>
     <section class="features container my-3">

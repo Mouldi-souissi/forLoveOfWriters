@@ -9,9 +9,8 @@
   --white: #fff;
 
   /*  text*/
-  --hero: "Poppins", sans-serif;
+  --text: "Poppins", sans-serif;
   --title: "Playfair Display", serif;
-  --text: "Lora", serif;
   /* general */
   --default-margin: 8px;
   --shadow: 1px 1px 3px rgba(56, 65, 74, 0.6);
@@ -25,16 +24,18 @@
 
 body {
   background: var(--background) !important;
-  font-family: var(--hero);
+  font-family: var(--text) !important;
   font-optical-sizing: auto;
   font-style: normal;
   color: var(--black);
 }
 
+/*************** buttons ****************/
+
 button {
-  background: black;
-  color: white;
-  padding: 16px 32px;
+  background: var(--secondary);
+  color: var(--white);
+  padding: 8px 16px;
   cursor: pointer;
   border-radius: 4px;
   font-size: 1.2em;
@@ -45,13 +46,14 @@ button {
   text-transform: uppercase;
   font-weight: bold;
   transition: all 0.3s ease-in-out;
+  letter-spacing: 1px;
 }
 
 button:hover {
   box-shadow: var(--shadow);
   opacity: 0.8;
   background: var(--primary);
-  color: black;
+  color: var(--secondary);
 }
 
 button:focus,
@@ -60,90 +62,40 @@ button:focus-visible {
   box-shadow: var(--shadow);
 }
 
-.hero {
-  position: relative;
-  width: 100%;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+button.lg {
+  padding: 16px 32px;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: url("https://myflowimages.s3.us-east-2.amazonaws.com/frontend/Homepage.jpg");
-  background-size: cover;
-  background-position: bottom;
-  border-radius: 20px;
-  filter: brightness(80%);
-}
-
-.hero-text {
-  font-size: 2.5em;
-  color: white;
-  text-align: center;
-  font-weight: 900;
-}
-
-.hero-content {
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 40px;
-}
-
-.logo-wrapper {
-  top: -80px;
-  position: absolute;
-  height: 220px;
-  width: 220px;
-  border-radius: 50%;
-  overflow: hidden;
-  background: white;
-  margin: 20px;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  /*  animation: glow infinite 1.5s alternate-reverse;*/
-}
-
-@keyframes glow {
-  0% {
-    box-shadow:
-      inset 0 0 10px var(--primary),
-      inset 0 0 20px var(--primary),
-      inset 0 0 30px var(--primary);
-  }
-  100% {
-    box-shadow:
-      inset 0 0 20px var(--primary),
-      inset 0 0 40px var(--primary),
-      inset 0 0 60px var(--primary);
-  }
-}
-
-.logo {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+/*************** navbar ****************/
 
 nav {
   margin: 20px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
 }
 
-nav i {
-  color: var(--black);
+nav .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+@media screen and (max-width: 992px) {
+  nav {
+    justify-content: flex-end;
+  }
+  nav .nav-links {
+    display: none;
+  }
+}
+
+nav .nav-links a:hover {
+  color: var(--primary);
+}
+
+nav .nav-icon {
+  color: var(--secondary);
   font-size: 25px;
   font-weight: bold;
 }
@@ -158,27 +110,8 @@ nav a {
   color: var(--black);
 }
 
-footer {
-  box-shadow: 0px 0 2px rgba(0, 0, 0, 0.4);
-  background: black;
-  color: white;
-}
+/*************** menu ****************/
 
-footer i {
-  color: var(--white);
-  font-size: 2em;
-}
-
-footer a:hover i {
-  color: var(--primary);
-}
-
-.features .lead {
-  font-size: 1.2em;
-  font-weight: 500;
-}
-
-/*menu*/
 details {
   position: relative;
 }
@@ -222,32 +155,69 @@ summary {
   list-style: none;
 }
 
-.card {
-  overflow: hidden;
-}
+/*************** hero ****************/
 
-/*contact-us  */
-.contact-card {
-  border-radius: 20px;
-  overflow: hidden;
-  background: white;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.contact-img-container {
+.hero {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.contact-img {
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://myflowimages.s3.us-east-2.amazonaws.com/frontend/Homepage.jpg");
+  background-size: cover;
+  background-position: bottom;
+  border-radius: 20px;
+  filter: brightness(80%);
+}
+
+.hero-text {
+  font-size: 2.5em;
+  color: var(--white);
+  text-align: center;
+  font-weight: 900;
+  font-family: var(--title);
+}
+
+.hero-content {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.logo-wrapper {
+  top: -80px;
+  position: absolute;
+  height: 220px;
+  width: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: white;
+  margin: 20px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
   position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-/*features*/
+/*************** features ****************/
 
 .feature-img-container {
   border-radius: 50% !important;
@@ -270,4 +240,49 @@ summary {
 .lead:first-letter {
   color: var(--primary);
   font-size: 1.6em;
+  font-family: var(--title);
+}
+
+.features .lead {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+/*************** Contact us ****************/
+
+.contact-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.contact-img-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.contact-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*************** footer ****************/
+
+footer {
+  box-shadow: 0px 0 2px rgba(0, 0, 0, 0.4);
+  background: var(--secondary);
+  color: var(--white);
+}
+
+footer i {
+  color: var(--white);
+  font-size: 2em;
+}
+
+footer a:hover i {
+  color: var(--primary);
 }
