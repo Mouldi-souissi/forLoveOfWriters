@@ -3,8 +3,7 @@
 :root {
   /*  colors*/
   --primary: #7cb9e8;
-  --secondary: tomato;
-  --accent: white;
+  --secondary: black;
   --background: #f3f1f7;
   --black: #333a44;
   --white: #fff;
@@ -114,15 +113,15 @@ button:focus-visible {
 @keyframes glow {
   0% {
     box-shadow:
-      0 0 10px var(--primary),
-      0 0 10px var(--primary),
-      0 0 10px var(--primary);
+      inset 0 0 10px var(--primary),
+      inset 0 0 20px var(--primary),
+      inset 0 0 30px var(--primary);
   }
   100% {
     box-shadow:
-      0 0 10px var(--secondary),
-      0 0 10px var(--secondary),
-      0 0 10px var(--secondary);
+      inset 0 0 20px var(--primary),
+      inset 0 0 40px var(--primary),
+      inset 0 0 60px var(--primary);
   }
 }
 
@@ -246,4 +245,29 @@ summary {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/*features*/
+
+.feature-img-container {
+  border-radius: 50% !important;
+  height: 300px;
+  width: 300px;
+  position: relative;
+  outline: 20px solid var(--white);
+  outline-offset: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px var(--primary);
+}
+
+.feature-img-container img {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.lead:first-letter {
+  color: var(--primary);
+  font-size: 1.6em;
 }
