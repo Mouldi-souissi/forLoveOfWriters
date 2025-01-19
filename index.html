@@ -154,38 +154,44 @@
               method="post"
               action="#"
               class="contact-form"
+              autocomplete="on"
             >
               <div class="controls">
                 <div class="fs-5 fw-bold text-center">Contact Us</div>
                 <div class="row mt-3">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="name">First name *</label
+                      <label for="firstname">First name *</label
                       ><input
+                        id="firstname"
                         type="text"
-                        name="name"
+                        name="firstname"
                         placeholder="Enter your First name"
                         required
                         class="form-control"
+                        autocomplete="given-name"
                       />
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="surname">Last name *</label
+                      <label for="lastname">Last name *</label
                       ><input
+                        id="lastname"
                         type="text"
-                        name="surname"
+                        name="lastname"
                         placeholder="Enter your Last name"
                         required
                         class="form-control"
+                        autocomplete="family-name"
                       />
                     </div>
                   </div>
                 </div>
                 <div class="form-group mt-3">
-                  <label for="surname">Email *</label
+                  <label for="email">Email *</label
                   ><input
+                    id="email"
                     type="email"
                     name="email"
                     placeholder="Enter your email"
@@ -193,11 +199,13 @@
                     class="form-control"
                     pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
                     title="Please enter a valid email address"
+                    autocomplete="email"
                   />
                 </div>
                 <div class="form-group mt-3">
-                  <label for="surname">Message *</label
+                  <label for="message">Message *</label
                   ><textarea
+                    id="message"
                     rows="4"
                     name="message"
                     placeholder="Enter your message"
