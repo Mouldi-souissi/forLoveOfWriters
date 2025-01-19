@@ -81,15 +81,6 @@ nav .nav-links {
   gap: 20px;
 }
 
-@media screen and (max-width: 992px) {
-  nav {
-    justify-content: flex-end;
-  }
-  nav .nav-links {
-    display: none;
-  }
-}
-
 nav .nav-links a:hover {
   color: var(--primary);
 }
@@ -285,4 +276,26 @@ footer i {
 
 footer a:hover i {
   color: var(--primary);
+}
+
+/*************** Media ****************/
+
+@media screen and (max-width: 992px) {
+  nav {
+    justify-content: flex-end;
+  }
+  nav .nav-links {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero-text {
+    font-size: 2em;
+  }
+
+  .logo-wrapper {
+    height: 150px;
+    width: 150px;
+  }
 }
