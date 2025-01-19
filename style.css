@@ -2,7 +2,7 @@
 
 :root {
   /*  colors*/
-  --primary: cyan;
+  --primary: #7cb9e8;
   --secondary: tomato;
   --accent: white;
   --background: #f3f1f7;
@@ -45,11 +45,14 @@ button {
   min-width: 200px;
   text-transform: uppercase;
   font-weight: bold;
+  transition: all 0.3s ease-in-out;
 }
 
 button:hover {
   box-shadow: var(--shadow);
   opacity: 0.8;
+  background: var(--primary);
+  color: black;
 }
 
 button:focus,
@@ -138,7 +141,6 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 40px;
 }
 
 nav i {
@@ -148,8 +150,13 @@ nav i {
 }
 
 nav i:hover {
-  color: black;
+  color: var(--primary);
   cursor: pointer;
+}
+
+nav a {
+  text-decoration: none !important;
+  color: var(--black);
 }
 
 footer {
@@ -161,9 +168,82 @@ footer {
 footer i {
   color: var(--white);
   font-size: 2em;
-  transition: all 0.3s ease-in-out;
 }
 
-footer i:hover {
-  transform: translateY(-5px);
+footer a:hover i {
+  color: var(--primary);
+}
+
+.features .lead {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+/*menu*/
+details {
+  position: relative;
+}
+
+.menu_list {
+  z-index: 2;
+  position: absolute;
+  background: white;
+  right: 0;
+  padding: 0;
+  border: 1px solid lightgrey;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.349);
+  border-radius: 8px;
+  margin-top: 3px;
+  overflow: hidden;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu_item {
+  padding: 8px 10px;
+  text-align: left;
+  font-weight: 400;
+}
+
+.menu_item:hover,
+.menu_item:focus {
+  background: rgba(211, 211, 211, 0.432);
+  outline: none;
+}
+.menu_item:hover i,
+.menu_item:focus i {
+  color: var(--primary);
+}
+details[open] .btn {
+  background: lightgrey !important;
+}
+
+summary {
+  list-style: none;
+}
+
+.card {
+  overflow: hidden;
+}
+
+/*contact-us  */
+.contact-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.contact-img-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.contact-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

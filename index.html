@@ -22,7 +22,27 @@
   <body>
     <nav class="container">
       <i class="bi bi-search"></i>
-      <i class="bi bi-list"></i>
+      <details>
+        <summary>
+          <a class="">
+            <i class="bi bi-list"></i>
+          </a>
+        </summary>
+        <div class="menu_list">
+          <a class="menu_item d-flex align-items-center gap-3" href="#">
+            <i class="bi bi-house"></i>
+            <div>Home</div>
+          </a>
+          <a class="menu_item d-flex align-items-center gap-3" href="#">
+            <i class="bi bi-info-circle"></i>
+            <div>About Us</div>
+          </a>
+          <a class="menu_item d-flex align-items-center gap-3" href="#">
+            <i class="bi bi-mailbox"></i>
+            <div>Contact Us</div>
+          </a>
+        </div>
+      </details>
     </nav>
     <section class="hero container">
       <div class="hero-content">
@@ -36,7 +56,7 @@
     <section class="features container my-3">
       <div class="row align-items-center g-5 mt-3">
         <div class="col-lg-6 h-100">
-          <div class="card">
+          <div class="card rounded">
             <img
               alt="feature"
               src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -66,7 +86,7 @@
           </div>
         </div>
         <div class="col-lg-6 h-100 order-1 order-lg-2">
-          <div class="card">
+          <div class="card rounded">
             <img
               alt="feature"
               src="https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1373&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -76,7 +96,7 @@
       </div>
       <div class="row align-items-center g-5 mt-3">
         <div class="col-lg-6 h-100">
-          <div class="card">
+          <div class="card rounded">
             <img
               alt="feature"
               src="https://images.unsplash.com/photo-1526958097901-5e6d742d3371?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -95,32 +115,105 @@
         </div>
       </div>
     </section>
+
+    <section class="contact-us my-5">
+      <div class="container">
+        <div class="row contact-card">
+          <div class="col-lg-6 px-0">
+            <div class="contact-img-container">
+              <img
+                src="https://cartachain.netlify.app/static/media/contact2.dbbda60e.jpg"
+                alt="contact"
+                class="mb-5 contact-img"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6 p-5">
+            <form
+              id="contact-form"
+              method="post"
+              action="#"
+              class="contact-form"
+            >
+              <div class="controls">
+                <div class="lead fw-bold text-center">Contact Us</div>
+                <div class="row mt-3">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="name">First name *</label
+                      ><input
+                        type="text"
+                        name="name"
+                        placeholder="Enter your First name"
+                        required
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="surname">Last name *</label
+                      ><input
+                        type="text"
+                        name="surname"
+                        placeholder="Enter your Last name"
+                        required
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group mt-3">
+                  <label for="surname">Email *</label
+                  ><input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                    class="form-control"
+                    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                    title="Please enter a valid email address"
+                  />
+                </div>
+                <div class="form-group mt-3">
+                  <label for="surname">Message *</label
+                  ><textarea
+                    rows="4"
+                    name="message"
+                    placeholder="Enter your message"
+                    required
+                    class="form-control"
+                  ></textarea>
+                </div>
+                <button class="mt-3 w-100">SEND</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
     <footer>
-      <div class="container-fluid p-5">
-        <div class="row">
-          <div class="col-lg-6 my-auto text-center">
-            <p class="small mb-4 mb-lg-0 text-white">
+      <div class="container-fluid p-4">
+        <div class="row align-items-center g-3">
+          <div class="col-lg-6 text-center">
+            <p class="small m-0">
               © For Love Of Writers 2025. All Rights Reserved.
             </p>
           </div>
           <div class="col-lg-6 text-center">
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="https://www.facebook.com">
-                  <i class="bi bi-facebook"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://www.instagram.com/">
-                  <i class="bi bi-instagram"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://www.linkedin.com/">
-                  <i class="bi bi-linkedin"></i>
-                </a>
-              </li>
-            </ul>
+            <div class="d-flex justify-content-center align-items-center gap-3">
+              <a href="https://www.facebook.com">
+                <i class="bi bi-facebook"></i>
+              </a>
+
+              <a href="https://www.instagram.com/">
+                <i class="bi bi-instagram"></i>
+              </a>
+
+              <a href="https://www.linkedin.com/">
+                <i class="bi bi-linkedin"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
