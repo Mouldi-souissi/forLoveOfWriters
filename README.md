@@ -1,6 +1,6 @@
 # Preview
 
-hosted on netlify: [https://for-love-of-writers.netlify.app/]
+hosted on netlify: https://for-love-of-writers.netlify.app/
 
 # How to run the project locally
 
